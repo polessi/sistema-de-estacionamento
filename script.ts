@@ -11,7 +11,20 @@ interface Veiculo {
     function patio(){
         function ler(){}
 
-        function adicionar(){}
+        function adicionar(veiculo: Veiculo){
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                <td>${veiculo.nome}</td>
+                <td>${veiculo.placa}</td>
+                <td>${veiculo.entrada}</td>
+                <td>
+                    <button class="delete" data-placa="${veiculo.placa}"> X </button>
+                </td>
+            `
+            $('#patio')?.appendChild(row);
+            
+        }
 
         function remover(){}
 
@@ -33,5 +46,6 @@ interface Veiculo {
             return;
         }
 
+        patio().adicionar({ nome, placa, entrada: new Date() })
     });
 })();
