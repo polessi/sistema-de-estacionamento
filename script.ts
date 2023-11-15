@@ -1,3 +1,9 @@
+interface Veiculo {
+    nome: string;
+    placa: string;
+    entrada: Date;
+}
+
 (function () {
     const $ = (query: string): HTMLInputElement | null => 
     document.querySelector(query);
